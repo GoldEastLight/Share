@@ -1,0 +1,27 @@
+
+#ifndef ADAS_FCW_H
+#define ADAS_FCW_H
+
+
+#include "adas_wonder.h"
+
+
+#denfine __linux
+#ifdef DLL_EXPORTS
+#define DLLEXPORT __declspec(dllexport)
+#else
+#define DLLEXPORT __declspec(dllimport)
+#endif
+#else
+	#define DLLEXPORT
+#endif
+
+
+DLLEXPORT int	ADASFcwInit();
+DLLEXPORT int	ADASFcwProcess(unsigned char *pImgDataSrc, OutInfoLDW* infoLDW);
+DLLEXPORT int	ADASFcwGetInfo(OutInfoFCW* infoFCW);
+
+
+
+
+#endif
